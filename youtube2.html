@@ -1,0 +1,85 @@
+<body style="background-color: #24222a;">
+  <div id = "stuff" class=" d-flex justify-content-center">
+<div id="player"></div>
+</div>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+  <div id = "stuff" class=" d-flex justify-content-center">
+<div id="player2" ></div>
+</div>
+
+</body>
+<script>
+ var tag = document.createElement('script');
+ tag.src = "https://www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+ var player2;
+ var player;
+
+
+
+
+
+ window.onYouTubeIframeAPIReady = function() {
+    console.log("YouTube API Ready");
+
+
+    myvar = "4n02FL8Fn5A,M7lc1UVf-VE";
+    vals = myvar.split(",");
+
+    console.log("YouTube API Ready");
+
+    player = new YT.Player('player', { 
+        videoId: vals[0],
+        playerVars: {
+            controls: 1,
+
+            autoplay: 0,
+            disablekb: 1,
+            enablejsapi: 1,
+            iv_load_policy: 3,
+            // modestbranding: 1,
+            showinfo: 1
+        }
+    });
+
+    player2 = new YT.Player('player2', { 
+        videoId: vals[1],
+        playerVars: {
+            controls: 1,
+            autoplay: 0,
+            disablekb: 1,
+            enablejsapi: 1,
+            iv_load_policy: 3,
+            // modestbranding: 1,
+            showinfo: 1
+        }
+    }); 
+
+    ytLoaded = true;
+
+    if (windowWidth) { // if document loaded first
+        resizePlayer();
+    }
+ };
+function mytime(argument) {
+    if (ytLoaded==true) {
+      console.log(player);
+      console.log(player.getCurrentTime())
+      if ( (player2.getCurrentTime()-player.getCurrentTime()  )**2>=10 ) {
+      player2.seekTo( player.getCurrentTime() , true);
+
+          }
+        }
+      }
+setInterval(mytime, 6000);
+ 
+</script>

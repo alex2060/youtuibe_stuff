@@ -1,0 +1,131 @@
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<body style="background-color: #24222a;">
+</br>
+</br>
+</br>
+<div id = "stuff" class=" d-flex justify-content-center">
+<div id="player"></div>
+</div>
+</br>
+</br>
+</br>
+<div id="mainbody"></div>
+</br>
+</br>
+</br>
+</body>
+<script>
+ var tag = document.createElement('script');
+ tag.src = "https://www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+ var player;
+
+ window.onYouTubeIframeAPIReady = function() {
+    console.log("YouTube API Ready");
+    myvar = "M7lc1UVf-VE,https://www.ap.org/,https://www.ap.org/about/,https://www.ap.org/topics/,https://www.ap.org/topics/breaking-news,https://www.ap.org/topics/business-and-finance,https://www.ap.org/topics/entertainment,https://www.ap.org/topics/lifestyle/,https://www.ap.org/topics/religion-and-faith,https://www.ap.org/topics/politics/";
+    vals = myvar.split(",");
+
+    player = new YT.Player('player', { 
+        videoId: vals[0],
+        playerVars: {
+            controls: 1,
+            autoplay: 0,
+            disablekb: 1,
+            enablejsapi: 1,
+            iv_load_policy: 3,
+            // modestbranding: 1,
+            showinfo: 1
+        }
+    }); 
+
+    ytLoaded = true;
+
+    if (windowWidth) { // if document loaded first
+        resizePlayer();
+    }
+ };
+
+      function mytime(argument) {
+
+
+    if (ytLoaded==true) {
+      //alert("in here");
+          //console.log(player);
+          console.log(player.getCurrentTime());
+              myvar = "M7lc1UVf-VE,https://www.ap.org/,https://www.ap.org/about/,https://www.ap.org/topics/,https://www.ap.org/topics/breaking-news,https://www.ap.org/topics/business-and-finance,70,270,370,470";
+            vals = myvar.split(",");
+          if (player.getCurrentTime()>=0 && player.getCurrentTime()<=parseFloat(vals[6]) ){
+            console.log("in0")
+            if (place !=0){
+                place = 0;
+                load(0);
+            }
+          }else if (player.getCurrentTime()>=parseFloat(vals[6]) && player.getCurrentTime()<=parseFloat(vals[7]) ){
+            console.log("in1")
+            if (place !=1){
+                place = 1;
+                load(1);
+            }
+          }else if (player.getCurrentTime()>=parseFloat(vals[7]) && player.getCurrentTime()<=parseFloat(vals[8]) ){
+            console.log("in2")
+            if (place !=2){
+                place = 2;
+                load(2);
+            }
+          }else if (player.getCurrentTime()>=parseFloat(vals[8]) && player.getCurrentTime()<=parseFloat(vals[9]) ){
+            console.log("in3")
+            if (place !=3){
+                place = 3;
+                load(3);
+            }
+          }else if (player.getCurrentTime()>=parseFloat(vals[9]) ){
+            console.log("in4")
+            if (place !=4){
+                place = 4;
+                load(4);
+            }
+          }
+      
+
+        }
+      }
+      setInterval(mytime, 1500);
+</script>
+
+
+
+
+<script type="text/javascript">
+
+
+counter = 0;
+maxium = 17;
+function load(number) {
+
+    myvar = "M7lc1UVf-VE,https://www.ap.org/,https://www.ap.org/about/,https://www.ap.org/topics/,https://www.ap.org/topics/breaking-news,https://www.ap.org/topics/business-and-finance,70";
+    vals = myvar.split(",");
+    console.log(vals);
+  array4 = [
+  vals[1],
+  vals[2],
+
+  vals[3],
+  vals[4],
+  vals[5]
+  ]
+
+
+
+
+value ="<div class=\" d-flex justify-content-center\"> <iframe width=\"90%\" height=\"815\" src=\""+array4[number]+"\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>";
+  document.getElementById("mainbody").innerHTML = value;
+}
+
+place=0;
+load(0);
+</script>

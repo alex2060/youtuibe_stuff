@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Read Text File</title>
+</head>
+<body  style="background-color: #24222a;">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</br>
+</br>
+  <label for="fname" class="text-white">Main Youtube Video</label>
+  <input type="text" id="name" name="fname"><br><br>
+
+  <label for="lname" class="text-white">IFram 1</label>
+  <input type="text" id="fram1" name="lname"><br><br>
+
+  <label for="lname" class="text-white">IFram 1 time</label>
+  <input type="text" id="tim1" name="lname"><br><br>
+
+
+  <label for="lname" class="text-white">IFram 2</label>
+  <input type="text" id="fram2" name="lname"><br><br>
+
+  <label for="lname" class="text-white">IFram 2 time</label>
+  <input type="text" id="tim2" name="lname"><br><br>
+
+
+  <label for="lname" class="text-white">IFram 3</label>
+  <input type="text" id="fram3" name="lname"><br><br>
+
+  <label for="lname" class="text-white">IFram 3 time</label>
+  <input type="text" id="tim3" name="lname"><br><br>
+
+  <label for="lname" class="text-white">IFram 4</label>
+  <input type="text" id="fram4" name="lname"><br><br>
+
+  <label for="lname" class="text-white">IFram 4 time</label>
+  <input type="text" id="tim4" name="lname"><br><br>
+
+  <label for="lname" class="text-white">IFram 5</label>
+  <input type="text" id="fram5" name="lname"><br><br>
+
+
+
+<script type="text/javascript">
+
+  function myFunction() {
+  myurl = "(!P???!???P!)?action_type=makepage&usertemplate_name=youtube1&var1="+document.getElementById("name").value+","+document.getElementById("fram1").value+","+document.getElementById("fram2").value+","+document.getElementById("fram3").value+","+document.getElementById("fram4").value+","+document.getElementById("fram5").value+","+document.getElementById("tim1").value+","+document.getElementById("tim2").value+","+document.getElementById("tim3").value+","+document.getElementById("tim4").value;
+
+
+  document.getElementById("myurl").innerHTML=myurl +"</br>";
+  }
+
+
+</script>
+
+
+ <button onclick="myFunction()" type="button">Make</button> 
+
+<label for="lname" class="text-white">
+<div id = "myurl" > </div>
+</label>
+</br></br>
+<label for="lname" class="text-white">
+<div id = "aa" >^ </div>
+</label>
+</body>
+
+
+
